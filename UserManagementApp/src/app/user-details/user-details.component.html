@@ -1,0 +1,61 @@
+<div class="jumbotron py-3">
+    <h1 class="diplay-4 text-center">USER MANAGEMENT </h1>
+</div>
+<!-- <app-user-detail-form> </app-user-detail-form> -->
+<div class="col-md-12">
+    <table class="table">
+        <thead class="thead-light thead-light-new">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Gender</th>
+                <th>Active</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ud of service.list">
+                <td>{{ud.firstName}}</td>
+                <td>{{ud.lastName}}</td>
+                <td>{{ud.email}}</td>
+                <td>{{ud.phone}}</td>
+                <td>{{ud.address}}</td>
+                <td>{{ud.gender}}</td>
+                <td>{{ud.active}}</td>
+                <td style='white-space: nowrap'>
+                    <i (click)="updateForm(ud);showModal=true" class="fas fa-edit fa-lg" id="editIcon"></i>
+                    <i (click)="onDelete(ud.userDetailId)" class="far fa-trash-alt fa-lg text-danger"></i>
+                    
+                </td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="addUser col-md-12">
+    <button type="button" class="btn btn-info btn-lg col-md-12" data-toggle="modal" data-target="#myModal" (click)="showModal=true">Add New User</button>
+    <!-- Modal -->
+    <div id="myModal" class="modal" role="dialog" [ngClass]="{'show':showModal}">
+    <div class="modal-dialog modal-lg">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <h4 class="modal-title">USER DETAILS</h4>
+          <button type="button" class="close" data-dismiss="modal" (click)="showModal=false">&times;</button>
+        </div>
+        <div class="modal-body">
+            <app-user-detail-form></app-user-detail-form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default btn-danger" data-dismiss="modal" (click)="showModal=false">Cancel</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+.form-group label {
+    color: grey;
+    
+  }
+  
+  .form-group input {
+    font-weight: 500;
+  }
+  
+  .form-group input::placeholder {
+    color: #c0bdbd;
+    font-weight: 300;
+  }
+
+  .form-group textarea::placeholder {
+    color: #c0bdbd;
+    font-weight: 300;
+  }
+  .help-block{
+    color: #b30505;
+    font-weight: 100;
+  }
+
+  thead th{
+    font-weight: 400;
+  }
+  
+  table tbody tr:hover {
+    background-color: #fffbf2;
+    
+  }
+  
+  /*for invalid form controls*/
+  input.invalid {
+    border-color: red;
+  }
+  select.invalid {
+    border-color: red;
+  }
+  .jumbotron{
+      background-color: rgb(7, 98, 121);
+      color: white;
+      text-shadow: #c0bdbd;
+      font: outline;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      text-align: center;
+      font-size: 30px;
+  } 
+  #yesRadio{
+      padding-right: 5px;
+  }
+  #yesRadioLabel{
+    padding-right: 5px;
+}
+.btn{
+    margin-top: 20px;
+}
+#editIcon{
+  margin: 8px;
+}
+.modal.show{
+  display: block;
+}
+.modal {
+  overflow-y:auto;
+}
+.modal-title{
+  text-align: center;
+}
+.fa-edit {
+  color: rgb(7, 76, 133);
+}
