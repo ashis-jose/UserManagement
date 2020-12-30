@@ -18,13 +18,13 @@
         </thead>
         <tbody>
           <tr col-md-12>
-            <td><input class="form-control input-sm" [(ngModel)]="searchInput"  (keyup)="search()" placeholder="Search"></td>
-            <td><input class="form-control input-sm"></td>
-            <td><input class="form-control input-sm"></td>
-            <td><input class="form-control input-sm"></td>
-            <td><input class="form-control input-sm"></td>
-            <td><input class="form-control input-sm"></td>
-            <td><input class="form-control input-sm"></td>
+            <td><input class="form-control input-sm" [(ngModel)]="searchInput"  (keyup)="searchFN()" placeholder="Search"></td>
+            <td><input class="form-control input-sm" [(ngModel)]="searchInput1"  (keyup)="searchLN()" placeholder="Search"></td>
+            <td><input class="form-control input-sm" [(ngModel)]="searchInput2"  (keyup)="searchEM()" placeholder="Search"></td>
+            <td><input class="form-control input-sm" [(ngModel)]="searchInput3"  (keyup)="searchP()" placeholder="Search"></td>
+            <td><input class="form-control input-sm" [(ngModel)]="searchInput4"  (keyup)="searchAD()" placeholder="Search"></td>
+            <td><input class="form-control input-sm" [(ngModel)]="searchInput5"  (keyup)="searchG()" placeholder="Search"></td>
+            <td><input class="form-control input-sm" [(ngModel)]="searchInput6"  (keyup)="searchAC()" placeholder="Search"></td>
             
           </tr>  
           <tr *ngFor="let ud of service.list">
