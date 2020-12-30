@@ -17,7 +17,17 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let ud of service.list">
+          <tr col-md-12>
+            <td><input class="form-control input-sm" [(ngModel)]="searchInput"  (keyup)="search()" placeholder="Search"></td>
+            <td><input class="form-control input-sm"></td>
+            <td><input class="form-control input-sm"></td>
+            <td><input class="form-control input-sm"></td>
+            <td><input class="form-control input-sm"></td>
+            <td><input class="form-control input-sm"></td>
+            <td><input class="form-control input-sm"></td>
+            
+          </tr>  
+          <tr *ngFor="let ud of service.list">
                 <td>{{ud.firstName}}</td>
                 <td>{{ud.lastName}}</td>
                 <td>{{ud.email}}</td>
@@ -39,7 +49,7 @@
     <button type="button" class="btn btn-info btn-lg col-md-12" data-toggle="modal" data-target="#myModal" (click)="showModal=true">Add New User</button>
     <!-- Modal -->
     <div id="myModal" class="modal" role="dialog" [ngClass]="{'show':showModal}">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
   
       <!-- Modal content-->
       <div class="modal-content">

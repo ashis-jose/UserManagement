@@ -29,7 +29,7 @@
   }
   
   table tbody tr:hover {
-    background-color: #fffbf2;
+    background-color: #f2fcff;
     
   }
   
@@ -72,4 +72,7 @@
 }
 .fa-edit {
   color: rgb(7, 76, 133);
+}
+select::-ms-expand { 
+  display: block; 
 }

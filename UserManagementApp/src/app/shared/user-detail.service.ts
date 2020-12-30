@@ -13,6 +13,8 @@ export class UserDetailService {
   formData: UserDetail = new UserDetail();
   list : UserDetail[];
   
+  
+  
   postUserDetail(){
     return this.http.post(this.baseURL,this.formData);
   }
@@ -25,7 +27,8 @@ export class UserDetailService {
     return this.http.delete(`${this.baseURL}/${id}`);
   }
 
-  refreshList(){
+  refreshList()
+  {
     this.http.get(this.baseURL)
     .toPromise()
     .then(res => this.list = res as UserDetail[])
