@@ -1,6 +1,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 
+
 .form-group label {
     color: grey;
     
@@ -25,12 +26,18 @@
   }
 
   thead th{
-    font-weight: 400;
+    font-weight: 600;
   }
   
   table tbody tr:hover {
-    background-color: #f2fcff;
+    background-color: #f1f5f7;
     
+  }
+  td{
+    font-weight: 495;
+  }
+  tr{
+    background-color: #ddf1f8;
   }
   
   /*for invalid form controls*/
@@ -40,7 +47,7 @@
   select.invalid {
     border-color: red;
   }
-  .jumbotron{
+  .jumbo-heading{
       background-color: rgb(7, 98, 121);
       color: white;
       text-shadow: #c0bdbd;
@@ -48,6 +55,7 @@
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       text-align: center;
       font-size: 30px;
+      margin-bottom: 15px;
   } 
   #yesRadio{
       padding-right: 5px;
@@ -56,7 +64,10 @@
     padding-right: 5px;
 }
 .btn{
-    margin-top: 20px;
+  background-color: #055b75 !important;
+}
+.btn:hover{
+  background-color: #143b46 !important;
 }
 #editIcon{
   margin: 8px;
@@ -75,4 +86,29 @@
 }
 select::-ms-expand { 
   display: block; 
+}
+body {
+  background-image: url('./assets/images/bg2.jpg');
+  background-size: cover;
+}
+#addUserButton{
+  background-color: #0ca80c !important;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+
+.modal-dialog{
+  overflow-y: initial !important
+}
+.modal-body{
+  height: 80vh;
+  overflow-y: auto;
+}
+
+#buttonCancel{
+  background-color: #d81111 !important;
 }

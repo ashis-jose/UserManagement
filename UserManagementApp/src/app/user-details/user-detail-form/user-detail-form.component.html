@@ -71,12 +71,19 @@
             </div>
         </div>
     </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-lg btn-block col-md-12" [disabled]="form.invalid"> 
-            SUBMIT
-        </button>
-    </div>
+    <div class="grid-container">
 
+        <div class="grid-child purple">
+            <button type="submit" id="addUserButton" class="btn btn-primary btn-lg btn-block" [disabled]="form.invalid"> 
+                SUBMIT
+            </button>
+        </div>
+    
+        <div class="grid-child green">
+            <button type="button" id="resetButton" class="btn btn-primary btn-lg btn-block" (click)="resetForm(form)">Reset</button>
+        </div>
+      
+    </div>
 
 
 </form>

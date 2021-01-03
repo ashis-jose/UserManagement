@@ -1,4 +1,4 @@
-<div class="jumbotron py-3">
+<div class="jumbo-heading py-3 col-md-12" >
     <h1 class="diplay-4 text-center">USER MANAGEMENT </h1>
 </div>
 <!-- <app-user-detail-form> </app-user-detail-form> -->
@@ -25,6 +25,7 @@
             <td><input class="form-control input-sm" [(ngModel)]="searchInput4"  (keyup)="searchAD()" placeholder="Search"></td>
             <td><input class="form-control input-sm" [(ngModel)]="searchInput5"  (keyup)="searchG()" placeholder="Search"></td>
             <td><input class="form-control input-sm" [(ngModel)]="searchInput6"  (keyup)="searchAC()" placeholder="Search"></td>
+            <td></td>
             
           </tr>  
           <tr *ngFor="let ud of service.list">
@@ -45,11 +46,11 @@
         </tbody>
     </table>
 </div>
-<div class="addUser col-md-12">
+
     <button type="button" class="btn btn-info btn-lg col-md-12" data-toggle="modal" data-target="#myModal" (click)="showModal=true">Add New User</button>
     <!-- Modal -->
     <div id="myModal" class="modal" role="dialog" [ngClass]="{'show':showModal}">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
   
       <!-- Modal content-->
       <div class="modal-content">
@@ -62,10 +63,9 @@
             <app-user-detail-form></app-user-detail-form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default btn-danger" data-dismiss="modal" (click)="showModal=false">Cancel</button>
+          <button type="button" id="buttonCancel" class="btn btn-default btn-danger" data-dismiss="modal" (click)="showModal=false">Cancel</button>
         </div>
       </div>
   
     </div>
   </div>
-</div>
