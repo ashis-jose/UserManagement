@@ -13,5 +13,6 @@ namespace UserManagementAPI.Models
 
         }
         public DbSet<UserDetail> UserDetails { get; set; }
+        public DbSet<AdminDetail> AdminDetails { get; set; }
     }
 }
