@@ -4,6 +4,7 @@ import { UserDetail } from '../shared/user-detail.model';
 import { UserDetailService } from '../shared/user-detail.service';
 
 
+
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
@@ -23,19 +24,34 @@ export class UserDetailsComponent implements OnInit {
   public searchInput4 : string;
   public searchInput5 : string;
   public searchInput6 : string;
+  selectedRecord:UserDetail=new UserDetail();
   
  
   inputKey : string;
   ngOnInit(): void {
     this.service.refreshList();
-    
+   
     
     
   }
   
-  updateForm(selectedRecord:UserDetail){
-    this.service.formData = Object.assign({},selectedRecord);
-  }
+  updateForm(id:number){
+    
+    this.service.getUser(id)
+    .toPromise()
+    .then(res => 
+    {this.service.formData = res as UserDetail},
+    err => {
+      this.showModal=false;
+      this.toastr.error("Sorry, this user appears to be missing and server returns following error: " + err.statusText,"ERROR:" + err.status);
+      console.log(err);
+      this.service.refreshList();
+      
+    }
+    
+    );
+    }
+ 
 
   onDelete(id:number){
     if (confirm('Are you sure to delete this record?'))
@@ -47,7 +63,13 @@ export class UserDetailsComponent implements OnInit {
         this.toastr.error("Deleted Successfully",'User Management')
         
       },
-      err =>{console.log(err)}
+      err =>{
+        this.toastr.error("Sorry, this user appears to be missing and server returns following error: " + err.statusText,"ERROR:" + err.status);
+        console.log(err);
+        this.service.refreshList();
+      }
+      
+      
     )
     }
   }
@@ -115,7 +137,5 @@ export class UserDetailsComponent implements OnInit {
       this.service.refreshList();
     }
   }
-
-  
 
 }

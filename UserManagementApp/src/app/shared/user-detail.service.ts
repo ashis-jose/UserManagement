@@ -15,6 +15,8 @@ export class UserDetailService {
   
   
   
+  
+  
   postUserDetail(){
     return this.http.post(this.baseURL,this.formData);
   }
@@ -32,6 +34,11 @@ export class UserDetailService {
     this.http.get(this.baseURL)
     .toPromise()
     .then(res => this.list = res as UserDetail[])
+  }
+  getUser(id:number)
+  {
+    return this.http.get(`${this.baseURL}/${id}`); 
+    
   }
 
 }

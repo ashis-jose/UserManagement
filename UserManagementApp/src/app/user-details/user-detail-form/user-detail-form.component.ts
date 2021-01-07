@@ -32,7 +32,10 @@ export class UserDetailFormComponent implements OnInit {
         this.toastr.success('Submitted successfully','User Management');
         this.service.refreshList();
       },
-      err => { console.log(err); }
+      err => {
+       console.log(err);
+       this.toastr.error("Sorry, server returns following error: " + err.statusText,"ERROR:" + err.status);
+      }
     );
   }
 
@@ -43,7 +46,9 @@ export class UserDetailFormComponent implements OnInit {
         this.toastr.info('Updated successfully','User Management');
         this.service.refreshList();
       },
-      err => { console.log(err); }
+      err => { 
+        this.toastr.error("Sorry, server returns following error: " + err.statusText,"ERROR:" + err.status);
+        console.log(err); }
     );
   }
 

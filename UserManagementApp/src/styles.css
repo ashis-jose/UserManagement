@@ -27,10 +27,11 @@
 
   thead th{
     font-weight: 600;
+    background-color: rgb(252, 252, 168) !important;
   }
   
   table tbody tr:hover {
-    background-color: #f1f5f7;
+    background-color: #fcfbf3;
     
   }
   td{
@@ -55,7 +56,8 @@
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       text-align: center;
       font-size: 30px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   } 
   #yesRadio{
       padding-right: 5px;
@@ -111,4 +113,10 @@ body {
 
 #buttonCancel{
   background-color: #d81111 !important;
+}
+.userTable{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#searchBar{
+  background-color: rgb(255, 255, 219);
 }

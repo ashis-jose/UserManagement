@@ -1,9 +1,9 @@
-<div class="jumbo-heading py-3 col-md-12" >
+<div class="jumbo-heading py-2 col-md-12" >
     <h1 class="diplay-4 text-center">USER MANAGEMENT </h1>
 </div>
-<!-- <app-user-detail-form> </app-user-detail-form> -->
+
 <div class="col-md-12">
-    <table class="table">
+    <table class="table userTable">
         <thead class="thead-light thead-light-new">
             <tr>
                 <th>First Name</th>
@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-          <tr col-md-12>
+          <tr col-md-12 id="searchBar">
             <td><input class="form-control input-sm" [(ngModel)]="searchInput"  (keyup)="searchFN()" placeholder="Search"></td>
             <td><input class="form-control input-sm" [(ngModel)]="searchInput1"  (keyup)="searchLN()" placeholder="Search"></td>
             <td><input class="form-control input-sm" [(ngModel)]="searchInput2"  (keyup)="searchEM()" placeholder="Search"></td>
@@ -37,7 +37,7 @@
                 <td>{{ud.gender}}</td>
                 <td>{{ud.active}}</td>
                 <td style='white-space: nowrap'>
-                    <i (click)="updateForm(ud);showModal=true" class="fas fa-edit fa-lg" id="editIcon"></i>
+                    <i (click)="updateForm(ud.userDetailId);showModal=true" class="fas fa-edit fa-lg" id="editIcon"></i>
                     <i (click)="onDelete(ud.userDetailId)" class="far fa-trash-alt fa-lg text-danger"></i>
                     
                 </td>
@@ -47,7 +47,7 @@
     </table>
 </div>
 
-    <button type="button" class="btn btn-info btn-lg col-md-12" data-toggle="modal" data-target="#myModal" (click)="showModal=true">Add New User</button>
+    <button type="button" class="btn btn-info btn-lg col-md-12"   (click)="showModal=true"><i class="fas fa-user-plus"></i> Add New User</button>
     <!-- Modal -->
     <div id="myModal" class="modal" role="dialog" [ngClass]="{'show':showModal}">
     <div class="modal-dialog modal-lg">
@@ -63,7 +63,7 @@
             <app-user-detail-form></app-user-detail-form>
         </div>
         <div class="modal-footer">
-          <button type="button" id="buttonCancel" class="btn btn-default btn-danger" data-dismiss="modal" (click)="showModal=false">Cancel</button>
+          <button type="button" id="buttonCancel" class="btn btn-default btn-danger" data-dismiss="modal" (click)="showModal=false;">Cancel</button>
         </div>
       </div>
   
