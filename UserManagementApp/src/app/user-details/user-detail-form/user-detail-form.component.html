@@ -6,7 +6,7 @@
             <label>First Name</label>
             <input class="form-control form-control-lg" placeholder="First Name" 
             name="firstName" #firstName="ngModel" [(ngModel)]="service.formData.firstName" 
-            required maxlength="40" [class.invalid]="firstName.invalid && firstName.touched">
+            required  [class.invalid]="firstName.invalid && firstName.touched">
             <span class="help-block" *ngIf="firstName.invalid && firstName.touched">
                 First Name is required
             </span>

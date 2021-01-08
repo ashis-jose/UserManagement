@@ -51,6 +51,7 @@ export class UserDetailsComponent implements OnInit {
     
     );
     }
+    
  
 
   onDelete(id:number){
